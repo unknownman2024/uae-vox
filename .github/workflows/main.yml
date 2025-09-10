@@ -1,4 +1,4 @@
-name: Fetch HTML with Playwright
+name: Fetch HTML with Requests
 
 on:
   push:
@@ -23,7 +23,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        playwright install chromium
 
     - name: Run the script
       run: python fetch_html.py
@@ -32,5 +31,5 @@ jobs:
       if: success()
       uses: actions/upload-artifact@v4
       with:
-        name: html-output
-        path: output.html
+        name: seats-html
+        path: seats.html
